@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-thin text-[#232428];
+  }
+}
+
+@layer components {
+  .navHead {
+    @apply cursor-pointer opacity-75 transition hover:opacity-100;
+  }
+  .tabEff {
+    text-align: center;
+    padding-bottom: 5px;
+    background: linear-gradient(to right, #ec4899, #8b5cf6) left bottom
+      no-repeat;
+    background-size: 100% 2px;
+  }
+  .tabPanel {
+    @apply grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3;
+  }
+}
