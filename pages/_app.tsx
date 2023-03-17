@@ -2,12 +2,18 @@ import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import { store } from "../store/store";
+import { Provider } from "react-redux";
+import {Toaster} from "react-hot-toast"
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-      <Header />
+      <Provider store={store}>
+        <Header />
+        <Toaster />
         <Component {...pageProps} />
+      </Provider>
     </>
   );
 }

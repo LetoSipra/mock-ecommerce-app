@@ -1,3 +1,4 @@
+import DynamicCart from "@/components/DynamicCart";
 import Landing from "@/components/Landing";
 import Product from "@/components/Product";
 import { fetchCategories } from "@/utility/fetchCategories";
@@ -20,6 +21,7 @@ const Home = ({ categories, products }: Props) => {
     <>
       <main className='relative h-[200vh] bg-[#E7ECEE]'>
         <Landing />
+        <DynamicCart />
       </main>
       <section className='relative z-40 -mt-[100vh] min-h-screen bg-[#1B1B1B] '>
         <div className='space-y-10 py-16  '>

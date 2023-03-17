@@ -2,8 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { HiOutlineSearch, HiShoppingBag } from "react-icons/hi";
 import { FaRegUser } from "react-icons/fa";
+import { useSelector } from "react-redux";
+import { selectCartItems } from "@/store/cartSlice";
 
 function Header() {
+  const totalCart = useSelector(selectCartItems);
   return (
     <>
       <header className='sticky top-0 z-30 flex w-full items-center justify-between bg-[#e7eceece] p-4  '>
@@ -22,19 +25,24 @@ function Header() {
             <li className='navHead'>Business</li>
           </ul>
         </div>
-        <div className="flex items-center justify-center space-x-4 md:w-1/5">
+        <div className='flex items-center justify-center space-x-4 md:w-1/5'>
           <HiOutlineSearch className='h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100 ' />
           <Link href={"/cart"}>
             <div className='relative cursor-pointer'>
-              <span className='absolute -right-1 -top-1 z-50 flex h-4 w-4 items-center 
+              {totalCart.length > 0 && (
+                <span
+                  className='absolute -right-1 -top-1 z-50 flex h-4 w-4 items-center 
               justify-center rounded-full bg-gradient-to-r from-pink-500 to-violet-500 
               text-[10px] text-white
-              '>31</span>
+              '>
+                  {totalCart.length}
+                </span>
+              )}
               <HiShoppingBag className='h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100' />
             </div>
           </Link>
           {/* Profileee */}
-          <FaRegUser className="h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100" />
+          <FaRegUser className='h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100' />
         </div>
       </header>
     </>
