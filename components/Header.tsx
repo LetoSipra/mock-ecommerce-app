@@ -4,12 +4,14 @@ import { HiOutlineSearch, HiShoppingBag } from "react-icons/hi";
 import { FaRegUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "@/store/cartSlice";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 function Header() {
+  const {data: session} = useSession()
   const totalCart = useSelector(selectCartItems);
   return (
     <>
-      <header className='sticky top-0 z-30 flex w-full items-center justify-between bg-[#e7eceece] p-4  '>
+      <header className=' top-0 z-30 flex w-full items-center justify-between bg-[#e7eceece] p-4  '>
         <div className='flex items-center justify-center md:w-1/5'>
           <Link href={"/"}>
             <div className='relative h-10 w-5 cursor-pointer opacity-75 transition hover:opacity-100 '>
@@ -41,8 +43,19 @@ function Header() {
               <HiShoppingBag className='h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100' />
             </div>
           </Link>
-          {/* Profileee */}
-          <FaRegUser className='h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100' />
+         {session ? (
+          <Image
+          src={session.user?.image || ""}
+          alt="profile picture"
+          height={34}
+          width={34}
+          className="cursor-pointer rounded-full"
+          onClick={() => signOut()}
+          />
+         ) : (
+          <FaRegUser onClick={() => signIn()} className='h-6 w-6 cursor-pointer opacity-75 transition hover:opacity-100' />
+         )}
+          
         </div>
       </header>
     </>
