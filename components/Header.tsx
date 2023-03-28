@@ -22,7 +22,7 @@ function Header() {
 
   return (
     <>
-      <header className="top-0 flex w-full items-center justify-between bg-[#434344] p-2  text-white opacity-95 md:justify-center  ">
+      <header className="top-0 flex h-12 w-full items-center justify-between bg-[#434344] p-2  text-white opacity-95 md:justify-center  ">
         <div className="flex items-center justify-center md:w-1/5">
             <MenuDropDown />
           <Link href={"/"}>
