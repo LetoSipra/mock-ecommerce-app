@@ -1,9 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  HiOutlineSearch,
-  HiOutlineShoppingBag,
-} from "react-icons/hi";
+import { HiOutlineSearch, HiOutlineShoppingBag } from "react-icons/hi";
 import { FaApple, FaRegUser } from "react-icons/fa";
 import { useSelector } from "react-redux";
 import { selectCartItems } from "@/store/cartSlice";
@@ -25,9 +22,9 @@ function Header() {
 
   return (
     <>
-      <header className="top-0 z-50 flex w-full items-center justify-between bg-[#434344] p-2  text-white opacity-95 md:justify-center  ">
+      <header className="top-0 flex w-full items-center justify-between bg-[#434344] p-2  text-white opacity-95 md:justify-center  ">
         <div className="flex items-center justify-center md:w-1/5">
-          <MenuDropDown />
+            <MenuDropDown />
           <Link href={"/"}>
             <div className="relative h-10 w-5 cursor-pointer opacity-70 transition duration-300 hover:opacity-100 ">
               <FaApple className="h-10 w-5 object-contain text-black" />

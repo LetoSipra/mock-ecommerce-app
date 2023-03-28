@@ -51,7 +51,7 @@ function Succsess({ products }: Props) {
           </Link>
           <div className="my-8 ml-4 flex space-x-4 lg:ml-14 xl:ml-0">
             <div className="item-center flex h-11 w-11 justify-center rounded-full border-2 border-black">
-              <BsCheck2 className="h-8 w-8 m-auto" />
+              <BsCheck2 className="m-auto h-8 w-8" />
             </div>
             <div>
               <p className="text-sm text-gray-600">
@@ -68,7 +68,7 @@ function Succsess({ products }: Props) {
                 Description bla bla bla bla
               </p>
             </div>
-            <div className="font-medium text-gray-600 pt-2">
+            <div className="pt-2 font-medium text-gray-600">
               <p>Tracking number: </p>
               <p>QJKRD31PD3VR3213</p>
             </div>
@@ -78,7 +78,9 @@ function Succsess({ products }: Props) {
             <p className="text-sm text-gray-600">Details</p>
           </div>
           <div className="mx-4 flex flex-col items-center justify-between text-sm lg:ml-14 lg:flex-row">
-            <p className="hidden lg:inline cursor-pointer">Need help ? Contact us</p>
+            <p className="hidden cursor-pointer lg:inline">
+              Need help ? Contact us
+            </p>
             <button
               className={`${isTabletOrMobile ? "w-full" : undefined} py-4`}
               onClick={() => router.push("/")}>

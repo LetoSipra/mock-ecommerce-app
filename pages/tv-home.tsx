@@ -30,7 +30,7 @@ const Home = ({ categories, products }: Props) => {
         <title>Tv & Home</title>
       </Head>
       <DynamicCart />
-      <main className="relative -z-10 h-[200vh] bg-[#fafafa]">
+      <main className="relative -z-10 h-[200vh] bg-[#fafafa] md:z-0">
         <TvHomeLanding />
       </main>
       <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7] ">

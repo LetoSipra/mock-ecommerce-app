@@ -30,7 +30,7 @@ const Home = ({ categories, products }: Props) => {
         <title>Apple - Mac</title>
       </Head>
       <DynamicCart />
-      <main className="relative -z-10 h-[200vh] bg-gradient-to-r from-black to-black">
+      <main className="relative -z-10 h-[200vh] bg-gradient-to-r from-black to-black md:z-0">
         <MacLanding />
       </main>
       <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7] ">

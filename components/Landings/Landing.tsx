@@ -4,8 +4,8 @@ import { AiOutlineRight } from "react-icons/ai";
 function Landing() {
   return (
     <>
-      <section className="sticky top-0 mx-auto flex h-screen  max-w-[1350px] flex-col items-center  ">
-        <div className="my-5 space-y-8">
+      <section className="sticky top-0 mx-auto flex h-screen  max-w-[1350px] flex-col items-center">
+        <div className="my-5 space-y-8 ">
           <h1 className="tracking-wide space-y-3 text-5xl font-semibold lg:text-6xl xl:text-7xl ">
             <span className="block bg-gradient-to-r from-pink-500 to-slate-600 bg-clip-text text-transparent">
               iPhone 14 Pro
@@ -24,7 +24,7 @@ function Landing() {
           </div>
         </div>
         <div
-          className="relative -z-50 h-full w-full transition-all duration-500 lg:h-full lg:w-full
+          className="relative  h-full w-full transition-all duration-500 lg:h-full lg:w-full
          ">
           <Image
             src={"https://gcdnb.pbrd.co/images/upbFBDj80SYE.jpg?o=1"}

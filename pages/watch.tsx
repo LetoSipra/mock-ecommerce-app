@@ -34,7 +34,7 @@ const Home = ({ categories, products }: Props) => {
       <main className="relative -z-10 h-[200vh] bg-white">
         <WatchLanding />
       </main>
-      <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7] ">
+      <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7] md:z-0 ">
         <div className="space-y-10 py-16  ">
           <h1 className="text-center text-4xl tracking-wide text-black md:text-5xl ">
             Which Apple - Watch is right for you?

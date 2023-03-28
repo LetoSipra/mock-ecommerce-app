@@ -19,7 +19,7 @@ function MenuDropDown() {
       </Menu.Button>
       <Menu.Items
         className={
-          "absolute top-20 left-2 rounded-none border border-[gray] bg-[#fafafa] text-black "
+          "absolute top-20 left-2 rounded-none border border-[gray] bg-[#fafafa] text-black"
         }>
         {links.map((link) => (
           <Link href={link.href}>
