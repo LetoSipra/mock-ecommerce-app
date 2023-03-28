@@ -1,6 +1,7 @@
 import DynamicCart from "@/components/DynamicCart";
 import Landing from "@/components/Landings/Landing";
 import Product from "@/components/Product";
+import WatchLanding from "@/components/Landings/WatchLanding";
 import { fetchCategories } from "@/utility/fetchCategories";
 import { fetchProducts } from "@/utility/fetchProducts";
 import { Tab } from "@headlessui/react";
@@ -20,23 +21,23 @@ const Home = ({ categories, products }: Props) => {
 
   const showProducts = (category: number) => {
     return products
-      .filter((product) => product.category._ref === filterByPage[category]._id)
+      .filter((product) => product.category._ref === categories[category]._id)
       .map((product) => <Product product={product} key={product._id} />); // filter products by category
   };
 
   return (
     <>
       <Head>
-        <title>Apple - iPhone</title>
+        <title>Apple - Watch</title>
       </Head>
       <DynamicCart />
-      <main className="relative -z-10 h-[200vh] bg-gradient-to-r from-black to-black">
-        <Landing />
+      <main className="relative -z-10 h-[200vh] bg-white">
+        <WatchLanding />
       </main>
       <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7] ">
         <div className="space-y-10 py-16  ">
           <h1 className="text-center text-4xl tracking-wide text-black md:text-5xl ">
-            Which iPhone is right for you?
+            Which Apple - Watch is right for you?
           </h1>
           <Tab.Group>
             <Tab.List className="flex justify-center">

@@ -15,8 +15,8 @@ export default function App({
     <>
       <SessionProvider session={session}>
         <Provider store={store}>
-          <Header />
           <Toaster />
+          <Header />
           <Component {...pageProps} />
         </Provider>
       </SessionProvider>

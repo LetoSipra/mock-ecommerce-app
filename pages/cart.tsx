@@ -37,7 +37,6 @@ function Cart() {
       }
     );
 
-    //Error handling
     if ((paymentSess as any).statusCode === 500) {
       console.error((paymentSess as any).message);
       return;
@@ -56,7 +55,6 @@ function Cart() {
     <div className="min-h-screen overflow-hidden bg-[#E7ECEE] ">
       <Head>
         <title>Bag</title>
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className="mx-auto max-w-5xl pb-24">
@@ -64,9 +62,10 @@ function Cart() {
           <h1 className="my-4 text-3xl font-semibold lg:text-4xl">
             {cartItems.length > 0 ? "Review" : "Empty"}
           </h1>
-          <p className="my-4">Free Delivery!!!</p>
           {cartItems.length === 0 && (
-            <button onClick={() => router.push("/")}>Im heree</button>
+            <button onClick={() => router.push("/")}>
+              You don't have any item in your bag. Click to keep browsing
+            </button>
           )}
         </div>
 
@@ -86,7 +85,7 @@ function Cart() {
                   </div>
                   <div className="flex justify-between ">
                     <p>Shipping</p>
-                    <p>FREE</p>
+                    <p>$20</p>
                   </div>
                   <div className="flex justify-between">
                     <div className="flex flex-col gap-x-1 lg:flex-row ">
@@ -114,24 +113,27 @@ function Cart() {
                       <span>Pay Monthly</span>
                       <span>with Credit Card</span>
                       <span>
-                        %0 Interest <sub className="-top-1">{"<3"}</sub>
+                        %0 Interest{" "}
+                        <sub className="-top-1">mastercard & visa</sub>
                       </span>
                     </h4>
-                    <button>Style Me</button>
-                    <p className="mt-2 max-w-[240px] text-[13px]">
-                      Special Today
-                    </p>
+                    <button
+                      onClick={paymentSess}
+                      className="hover:opacity-85  cursor-pointer rounded-3xl border border-solid border-sky-600 bg-sky-500 px-4 py-0.5 text-lg font-normal text-white/95 hover:opacity-90">
+                      Buy via Credit Card
+                    </button>
                   </div>
                   <div className="flex flex-1 flex-col items-center space-y-8 rounded-xl bg-gray-200 p-8 py-12 md:order-2">
-                    <h4 className="mb-4 flex flex-col text-xl font-semibold">
+                    <h4 className="mb-3 flex flex-col text-xl font-semibold">
                       Pay
-                      <span>
+                      <span className="">
                         <Currency quantity={cartTotal} currency="USD" />
                       </span>
                     </h4>
                     <button
-                      onClick={paymentSess}>
-                      Show some love
+                      onClick={paymentSess}
+                      className="hover:opacity-85  cursor-pointer rounded-3xl border border-solid border-sky-600 bg-sky-500 px-4 py-0.5 text-lg font-normal text-white/95 hover:opacity-90">
+                      Buy Now !!!
                     </button>
                   </div>
                 </div>

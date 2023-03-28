@@ -9,6 +9,8 @@ interface Category {
     current: string;
   };
   title: string;
+  page: string;
+  label: string;
 }
 
 interface Image {

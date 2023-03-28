@@ -5,7 +5,7 @@ import { groq } from "next-sanity";
 const query = groq`*[_type == "category"] {
 _id,
   ...
-}`;
+} | order(_createdAt asc)`;
 
 interface Data {
   categories: Category[];

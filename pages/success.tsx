@@ -1,13 +1,12 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { BsCheck2 } from "react-icons/bs";
+import { BsApple, BsCheck2 } from "react-icons/bs";
 import { useMediaQuery } from "react-responsive";
 import { useEffect, useState } from "react";
 import {
   HiChevronDown,
   HiChevronUp,
   HiOutlineShoppingCart,
-  HiShoppingCart,
 } from "react-icons/hi";
 import Currency from "react-currency-formatter";
 import { GetServerSideProps } from "next";
@@ -15,6 +14,8 @@ import { fetchItems } from "@/utility/fetchItems";
 import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import { urlFor } from "@/sanity";
+import { FaApple } from "react-icons/fa";
 interface Props {
   products: StripeProduct[];
 }
@@ -40,18 +41,17 @@ function Succsess({ products }: Props) {
     <div>
       <Head>
         <title>Thank You! For Purchasing</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
       </Head>
       <main className="grid grid-cols-1 lg:grid-cols-9">
         <section className="order-2 mx-auto max-w-xl pb-12 lg:col-span-5 lg:mx-0 lg:max-w-none lg:pr-16 lg:pt-16 xl:pl-16 2xl:pl-44">
           <Link href="/">
             <div className="relative ml-14 hidden h-24 w-12 cursor-pointer transition lg:inline-flex">
-              <Image src="" fill alt="" className="object-contain" />
+              <BsApple className="h-10 w-10 text-gray-700/75 transition duration-300 hover:text-gray-800" />
             </div>
           </Link>
           <div className="my-8 ml-4 flex space-x-4 lg:ml-14 xl:ml-0">
             <div className="item-center flex h-11 w-11 justify-center rounded-full border-2 border-black">
-              <BsCheck2 className="h-8 w-8" />
+              <BsCheck2 className="h-8 w-8 m-auto" />
             </div>
             <div>
               <p className="text-sm text-gray-600">
@@ -68,17 +68,17 @@ function Succsess({ products }: Props) {
                 Description bla bla bla bla
               </p>
             </div>
-            <div className="font-medium text-gray-600">
+            <div className="font-medium text-gray-600 pt-2">
               <p>Tracking number: </p>
               <p>QJKRD31PD3VR3213</p>
             </div>
           </div>
           <div className="my-4 mx-4 space-y-2 rounded-md border border-gray-300 p-4 lg:ml-14">
             <p>Order</p>
-            <p className="text-sm text-gray-600">details email</p>
+            <p className="text-sm text-gray-600">Details</p>
           </div>
           <div className="mx-4 flex flex-col items-center justify-between text-sm lg:ml-14 lg:flex-row">
-            <p className="hidden lg:inline">Need help ? Contact us</p>
+            <p className="hidden lg:inline cursor-pointer">Need help ? Contact us</p>
             <button
               className={`${isTabletOrMobile ? "w-full" : undefined} py-4`}
               onClick={() => router.push("/")}>
@@ -117,12 +117,7 @@ function Succsess({ products }: Props) {
                     className="flex items-center space-x-4 text-sm font-medium">
                     <div className="relative flex h-16 w-16 items-center justify-center rounded-md border border-gray-300 bg-[#F1F1F1] text-xs text-white ">
                       <div className="relative h-7 w-7 animate-pulse rounded-md">
-                        <Image
-                          src={""}
-                          fill
-                          alt=""
-                          className="object-contain"
-                        />
+                        <FaApple className="h-8 w-8 text-black" />
                       </div>
                       <div className="absolute -right-2 -top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[gray] text-xs">
                         {product.quantity}
