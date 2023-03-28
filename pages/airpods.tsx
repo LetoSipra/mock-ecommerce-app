@@ -16,7 +16,7 @@ interface Props {
 }
 
 const Home = ({ categories, products }: Props) => {
-  const filterByPage = categories.filter((filter) => filter.page === "iPhone");
+  const filterByPage = categories.filter((filter) => filter.page === "airpods");
 
   const showProducts = (category: number) => {
     return products
@@ -55,7 +55,6 @@ const Home = ({ categories, products }: Props) => {
             </Tab.List>
             <Tab.Panels className="mx-auto max-w-fit pt-10 pb-24 sm:px-4">
               <Tab.Panel className="tabPanel">{showProducts(0)}</Tab.Panel>
-              <Tab.Panel className="tabPanel">{showProducts(1)}</Tab.Panel>
             </Tab.Panels>
           </Tab.Group>
         </div>
