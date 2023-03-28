@@ -30,10 +30,10 @@ const Home = ({ categories, products }: Props) => {
         <title>Apple - AirPods</title>
       </Head>
       <DynamicCart />
-      <main className="bg/Landings relative -z-10 h-[200vh]">
+      <main className=" relative -z-10 h-[200vh] md:z-0">
         <AirPodsLanding />
       </main>
-      <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7] md:z-0 ">
+      <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7]">
         <div className="space-y-10 py-16  ">
           <h1 className="text-center text-4xl tracking-wide text-black md:text-5xl ">
             Which AirPods is right for you?

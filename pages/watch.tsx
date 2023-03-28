@@ -31,10 +31,10 @@ const Home = ({ categories, products }: Props) => {
         <title>Apple - Watch</title>
       </Head>
       <DynamicCart />
-      <main className="relative -z-10 h-[200vh] bg-white">
+      <main className="relative -z-10 h-[200vh] bg-white md:z-0">
         <WatchLanding />
       </main>
-      <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7] md:z-0 ">
+      <section className="relative z-40 -mt-[100vh] min-h-screen bg-[#f5f5f7]">
         <div className="space-y-10 py-16  ">
           <h1 className="text-center text-4xl tracking-wide text-black md:text-5xl ">
             Which Apple - Watch is right for you?
