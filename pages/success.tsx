@@ -11,10 +11,8 @@ import {
 import Currency from "react-currency-formatter";
 import { GetServerSideProps } from "next";
 import { fetchItems } from "@/utility/fetchItems";
-import Image from "next/image";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
-import { urlFor } from "@/sanity";
 import { FaApple } from "react-icons/fa";
 interface Props {
   products: StripeProduct[];

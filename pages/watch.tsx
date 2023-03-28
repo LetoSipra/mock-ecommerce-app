@@ -1,5 +1,4 @@
 import DynamicCart from "@/components/DynamicCart";
-import Landing from "@/components/Landings/Landing";
 import Product from "@/components/Product";
 import WatchLanding from "@/components/Landings/WatchLanding";
 import { fetchCategories } from "@/utility/fetchCategories";
