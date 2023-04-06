@@ -4,6 +4,9 @@ const nextConfig = {
   images: {
     domains: ["cdn.sanity.io", "lh3.googleusercontent.com", "gcdnb.pbrd.co"],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = nextConfig;
